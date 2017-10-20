@@ -66,5 +66,3 @@ var checkcheat = function(){
 		touchbound();
 	}
 }
-	 
-
