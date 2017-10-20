@@ -18,7 +18,7 @@ window.onload = function(){
 	//game.addEventListener("onmouseleave", checkcheat);
 	game.onmouseleave = checkcheat;
 
-	for(var x = 0; x < bound.length -1; x++){
+	for(var x = 0; x < bound.length; x++){
 		bound.item(x).addEventListener("mouseover", touchbound);
 		bound.item(x).addEventListener("mouseover", alerts);
 	}
@@ -33,7 +33,7 @@ var touchbound = function(){
 			wall = true;
 			state.innerHTML  = "You Lose..... Click S to restart";
 			state.style.color = "red";
-			for(var x = 0; x < bound.length -1; x++)
+			for(var x = 0; x < bound.length; x++)
 			{		
 				bound.item(x).setAttribute("class", "boundary youlose");
 			}
