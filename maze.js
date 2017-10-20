@@ -1,13 +1,20 @@
 var wall = false;
+var complete = false;
+var begin;
+var finish;
+var bound;
+var state;
+var game;
 
 window.onload = function(){
 
-	var begin = document.getElementById("start");
-	var finish = document.getElementById("end");
-	var bound = document.querySelectorAll(".boundary");
-	var state = document.getElementById("status");
-	var game = document.getElementById("maze");
+	begin = document.getElementById("start");
+	finish = document.getElementById("end");
+	bound = document.querySelectorAll(".boundary");
+	state = document.getElementById("status");
+	game = document.getElementById("maze");
 	
+	finish.addEventListener("mouseover", alerts)
 
 	for(var x = 0; x < bound.length; x++){
 		bound.item(x).addEventListener("mouseover", touchbound);
@@ -19,7 +26,6 @@ window.onload = function(){
 var touchbound = function(){
 
 		wall = true;
-		var bound = document.querySelectorAll(".boundary");
 		for(var x = 0; x < bound.length; x++)
 		{		
 			bound.item(x).setAttribute("class", "boundary youlose");
@@ -27,14 +33,17 @@ var touchbound = function(){
 	}
 
 var alerts = function(){
-	var state = document.getElementById("status");
+
 	if(wall === true)
-	{			 
-		state.innerHTML  = "You Lose";
+	{
+		state.innerHTML  = "You Lose..... Click S to restart";
 	}else{
-		state.innerHTML = "You Win......";
+		complete = true;
+		state.innerHTML = "You Win";	
 	}
 }
+
+
 
   
 	 
