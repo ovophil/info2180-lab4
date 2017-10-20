@@ -13,7 +13,7 @@ window.onload = function(){
 	bound = document.querySelectorAll(".boundary");
 	state = document.getElementById("status");
 	game = document.getElementById("maze");
-	
+	begin.addEventListener("click", restart);
 	finish.addEventListener("mouseover", alerts)
 
 	for(var x = 0; x < bound.length; x++){
@@ -43,7 +43,13 @@ var alerts = function(){
 	}
 }
 
-
+var restart = function(){
+	wall = false;
+	complete = false;
+	for(var x = 0; x < bound.length; x++){
+		bound.item(x).setAttribute("class", "boundary");
+	}	
+}
 
   
 	 
